@@ -1,5 +1,6 @@
 package com.hiremeans.automation;
 
+import com.hiremeans.automation.utils.OsUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,8 +16,12 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElemen
 public class FirstAutomationTest {
 
     public static void main(String[] args) {
-
-        System.setProperty("webdriver.chrome.driver", "chromedriver");
+        OsUtils osUtils = new OsUtils();
+        if(osUtils.isMacOs()) {
+            System.setProperty("webdriver.chrome.driver", "chromedriver-mac");
+        }else if(osUtils.isWindowsOS()){
+            System.setProperty("webdriver.chrome.driver", "chromedriver-windows.exe");
+        }
 
         WebDriver driver = new ChromeDriver();
 
