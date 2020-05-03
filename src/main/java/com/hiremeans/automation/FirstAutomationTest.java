@@ -16,7 +16,9 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElemen
 public class FirstAutomationTest {
 
     public static void main(String[] args) {
+
         OsUtils osUtils = new OsUtils();
+
         if(osUtils.isMacOs()) {
             System.setProperty("webdriver.chrome.driver", "chromedriver-mac");
         }else if(osUtils.isWindowsOS()){
