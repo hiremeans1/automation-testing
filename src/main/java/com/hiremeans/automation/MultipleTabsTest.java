@@ -103,7 +103,7 @@ public class MultipleTabsTest {
 
             System.out.println("------------------latest window tabs no : "+tabs.size());
 
-            // get the current page title
+            // get the current page title from the driver.
             String currentPageTitle = chromeDriver.getTitle();
 
             System.out.println(currentPageTitle);
@@ -111,7 +111,6 @@ public class MultipleTabsTest {
             Thread.sleep(2000);
 
             for (String tab : tabs) {
-
                   chromeDriver.switchTo().window(tab);
                   System.out.println("Url of tab# "+tabs.indexOf(tab)+" is : " + chromeDriver.getCurrentUrl());
                   Thread.sleep(1200);
