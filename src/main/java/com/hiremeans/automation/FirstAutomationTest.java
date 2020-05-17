@@ -28,7 +28,7 @@ public class FirstAutomationTest {
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         try {
-            driver.get("https://www.facebook.com/");
+            driver.get("https://www.facebook.com/"); // Facebook site
             //firstName
             driver.findElement(By.xpath("//*[@id=\"u_0_m\"]")).sendKeys("Hire");
             //lastName
